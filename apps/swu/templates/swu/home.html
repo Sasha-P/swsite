@@ -1,3 +1,63 @@
-{% extends "swu/base.html" %}
+{% extends "swu/base.html" %}{% load static %}
 
 {% block title %}STAR WARS{% endblock %}
+
+{% block menu_home %}class="active"{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="flex-center">
+                <div class="char">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                         class="img-circle img-thumbnail img-responsive" alt="Generic placeholder thumbnail" height="200" width="200">
+                    <h4 class="text-center">The Force</h4>
+                </div>
+                <div class="char">
+                    <img src="{% static 'img/Shmi Skywalker.png' %}"
+                         class="img-circle img-thumbnail img-responsive" alt="Generic placeholder thumbnail" height="200" width="200">
+                    <h4 class="text-center">Shmi Skywalker</h4>
+                </div>
+                <div class="char">
+                    <img src="{% static 'img/Ruwee Naberrie.png' %}"
+                         class="img-circle img-thumbnail img-responsive " alt="Generic placeholder thumbnail" height="200" width="200">
+                    <h4 class="text-center">Ruwee Naberrie</h4>
+                </div>
+                <div class="char">
+                    <img src="{% static 'img/Jobal Naberrie.png' %}"
+                         class="img-circle img-thumbnail img-responsive" alt="Generic placeholder thumbnail" height="200" width="200">
+                    <h4 class="text-center">Jobal Naberrie</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="flex-center">
+                <div class="char">
+                    <img src="{% static 'img/Anakin Skywalker.png' %}"
+                         class="img-circle img-thumbnail img-responsive " alt="Generic placeholder thumbnail" height="200" width="200">
+                    <h4 class="text-center">Anakin Skywalker</h4>
+                </div>
+                <div class="empt"></div>
+                <div class="char">
+                    <img src="{% static 'img/Padme Amidala.png' %}"
+                         class="img-circle img-thumbnail img-responsive " alt="Generic placeholder thumbnail" height="200" width="200">
+                    <h4 class="text-center">Padmé Amidala</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="flex-center">
+                <div class="char">
+                    <img src="{% static 'img/Luke Skywalker.png' %}"
+                         class="img-circle img-thumbnail img-responsive " alt="Generic placeholder thumbnail" height="200" width="200">
+                    <h4 class="text-center">Luke Skywalker</h4>
+                </div>
+                <div class="char">
+                    <img src="{% static 'img/Leia Skywalker.png' %}"
+                         class="img-circle img-thumbnail img-responsive " alt="Generic placeholder thumbnail" height="200" width="200">
+                    <h4 class="text-center">Leia Skywalker (Organa)</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

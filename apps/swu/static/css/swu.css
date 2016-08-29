@@ -1,0 +1,26 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.char {
+#  background: black;
+#  color: white;
+  padding: 15px;
+  max-width: 250px;
+  margin: 5px;
+}
+
+.empt {
+  max-width: 230px;
+  min-width: 230px;
+}
