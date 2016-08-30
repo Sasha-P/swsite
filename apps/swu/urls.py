@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.conf import settings
+from django.views.static import serve
 
 from .views import HomeView
 
@@ -21,3 +23,10 @@ app_name = 'swu'
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]

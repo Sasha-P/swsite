@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'apps.swu',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -129,3 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+here = lambda *dirs: os.path.join(os.path.abspath(os.path.dirname(__file__)), *dirs)
+BASE_DIR = here("..", "..")
+root = lambda *dirs: os.path.join(os.path.abspath(BASE_DIR), *dirs)
+# Configuring MEDIA_ROOT
+MEDIA_ROOT = root("media")
