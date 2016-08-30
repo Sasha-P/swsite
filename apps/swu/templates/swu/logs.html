@@ -1,0 +1,19 @@
+{% extends "swu/base.html" %}{% load static %}
+
+{% block title %}STAR WARS{% endblock %}
+
+{% block menu_requests %}class="active"{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                {% for req in requests %}
+                    <p>{{ req.time }} | {{ req.level }} | {{ req.message }}</p>
+                {% empty %}
+                    <p>No logs</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

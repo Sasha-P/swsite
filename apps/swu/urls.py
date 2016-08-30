@@ -17,11 +17,12 @@ from django.conf.urls import url
 from django.conf import settings
 from django.views.static import serve
 
-from .views import HomeView
+from .views import HomeView, RequestView
 
 app_name = 'swu'
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^request/$', RequestView.as_view(), name='request'),
 ]
 
 if settings.DEBUG:

@@ -30,7 +30,7 @@
                     <ul class="nav navbar-nav">
                         <li {% block menu_home %}{% endblock %}><a href="{% url 'swu:home' %}">Home</a></li>
                         <li {% block menu_explore %}{% endblock %}><a href="{% url 'swu:home' %}">Explore</a></li>
-                        <li {% block requests %}{% endblock %}><a href="{% url 'swu:home' %}">Requests</a></li>
+                        <li {% block menu_requests %}{% endblock %}><a href="{% url 'swu:request' %}">Requests</a></li>
                     </ul>
                 </div>
             </div>
