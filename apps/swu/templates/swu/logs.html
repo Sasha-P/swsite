@@ -8,11 +8,30 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                {% for req in requests %}
-                    <p>{{ req.time }} | {{ req.level }} | {{ req.message }}</p>
-                {% empty %}
+                {% if requests %}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Time</th>
+                                <th>Level</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for req in requests %}
+                                <tr>
+                                    <th scope="row">{{ forloop.counter }}</th>
+                                    <td>{{ req.time }}</td>
+                                    <td>{{ req.level }}</td>
+                                    <td>{{ req.message }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
                     <p>No logs</p>
-                {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>
