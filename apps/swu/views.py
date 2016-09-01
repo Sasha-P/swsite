@@ -18,7 +18,7 @@ class RequestView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(RequestView, self).get_context_data(**kwargs)
-        context['requests'] = SpecialLog.objects.all()
+        context['requests'] = SpecialLog.objects.all()[:10]
         return context
 
 
