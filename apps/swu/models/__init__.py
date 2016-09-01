@@ -1,2 +1,2 @@
 from .character import Character
-from .logger import SpecialLog, GeneralLog
+from .logger import SpecialLog, GeneralLog, SignalLog

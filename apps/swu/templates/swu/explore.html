@@ -1,0 +1,70 @@
+{% extends "swu/base.html" %}{% load static %}
+
+{% block title %}STAR WARS - EXPLORE{% endblock %}
+
+{% block menu_explore %}class="active"{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="characterName">Character Name</label>
+                        <input type="text" class="form-control" id="characterName" placeholder="Character Name">
+                    </div>
+                    <div class="form-group">
+                        <div class="pull-right">
+                            <button class="btn btn-primary" type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                {% if characters %}
+                    {% for character in characters %}
+                        <div class="media">
+                            <div class="media-left">
+                                {% if character.image %}
+                                    <img class="media-object img-thumbnail" src="{{ character.image.url }}" alt="{{ character.name }}" height="100" width="100">
+                                {% else %}
+                                    <img class="media-object img-thumbnail" src="{% static 'img/star_wars.png' %}" alt="no image" height="100" width="100">
+                                {% endif %}
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">{{ character.name }}</h4>
+                                <div class="param">
+                                    <p>Height: {{ character.height }}</p>
+                                    <p>Mass: {{ character.mass }}</p>
+                                </div>
+                                <div class="param">
+                                    <p>Birth year: {{ character.birth_year }}</p>
+                                    <p>Gender: {{ character.gender }}</p>
+                                </div>
+                                <div class="param">
+                                    <p>Hair color: {{ character.hair_color }}</p>
+                                    <p>Skin color: {{ character.skin_color }}</p>
+                                </div>
+                                <div class="param">
+                                    <p>Eye color: {{ character.eye_color }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/swu.js' %}"></script>
+{% endblock %}

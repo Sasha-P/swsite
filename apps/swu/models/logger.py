@@ -11,10 +11,18 @@ class DBLogEntry(models.Model):
 
 
 class GeneralLog(DBLogEntry):
-    pass
+
+    def __str__(self):
+        return '{} | {} | {}'.format(self.time, self.level, self.message)
 
 
 class SpecialLog(DBLogEntry):
+
+    def __str__(self):
+        return '{} | {} | {}'.format(self.time, self.level, self.message)
+
+
+class SignalLog(DBLogEntry):
 
     def __str__(self):
         return '{} | {} | {}'.format(self.time, self.level, self.message)

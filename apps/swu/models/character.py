@@ -1,4 +1,11 @@
+import logging
+
 from django.db import models
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
+
+
+logger = logging.getLogger(__name__)
 
 
 class FamilyManager(models.Manager):
@@ -26,3 +33,20 @@ class Character(models.Model):
 
     def get_absolute_url(self):
         return "/character/%i/" % self.id
+
+
+@receiver(post_save, sender=Character)
+def post_save_handler(sender, instance, created, *args, **kwargs):
+    action = 'create' if created else 'update'
+    do_log(action, instance)
+
+
+@receiver(post_delete, sender=Character)
+def post_delete_handler(sender, instance, *args, **kwargs):
+    action = 'delete'
+    do_log(action, instance)
+
+
+def do_log(action, instance):
+    msg = '{} | {} | {}'.format(action, instance, instance.id)
+    logger.info(msg)

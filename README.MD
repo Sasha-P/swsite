@@ -19,13 +19,17 @@ Export environment variables:
 1. export DJANGO_SETTINGS_MODULE='swsite.settings.`<environment>`'
 2. export SECRET_KEY="`<your secret key>`"
 
+## Rum migration and import fixture:
+
+1. `./manage.py migrate`
+2. `./manage.py migrate --database=log_db`
+3. `./manage.py loaddata apps/swu/fixtures/f.json`
+
 ## Use
 
 Export Characters to CSV file.
 
-`
-./manage.py exportcsv <output_file_name.csv>
-`
+`./manage.py exportcsv <output_file_name.csv>`
 
 ## License
 

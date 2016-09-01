@@ -24,3 +24,8 @@ body {
   max-width: 230px;
   min-width: 230px;
 }
+
+.param {
+  float: left;
+  width: 200px;
+}

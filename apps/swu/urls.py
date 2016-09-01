@@ -17,12 +17,13 @@ from django.conf.urls import url
 from django.conf import settings
 from django.views.static import serve
 
-from .views import HomeView, RequestView
+from .views import HomeView, RequestView, ExploreView
 
 app_name = 'swu'
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^request/$', RequestView.as_view(), name='request'),
+    url(r'^explore/$', ExploreView.as_view(), name='explore'),
 ]
 
 if settings.DEBUG:
